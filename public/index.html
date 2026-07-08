@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VortexCloud | Nuvem Pessoal</title>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="cloud-container">
+    <!-- Header -->
+    <header class="cloud-header">
+      <div class="header-logo">
+        <i data-lucide="cloud-lightning" class="icon-glow"></i>
+        <h1>Vortex<span>Cloud</span></h1>
+      </div>
+      <div class="cloud-stats">
+        <div class="stat-pill">
+          <i data-lucide="files"></i>
+          <span id="stat-files-count">0 arquivos</span>
+        </div>
+        <div class="stat-pill">
+          <i data-lucide="hard-drive"></i>
+          <span id="stat-storage-size">0 KB</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="cloud-workspace">
+      
+      <!-- Upload Section -->
+      <section class="glass-card upload-section">
+        <h3><i data-lucide="upload-cloud"></i> Upload de Arquivos</h3>
+        <p class="section-desc">Arraste seus arquivos para a área abaixo ou clique para selecionar do seu dispositivo.</p>
+        
+        <!-- Drag & Drop Zone -->
+        <div class="drop-zone" id="drop-zone">
+          <div class="drop-zone-content">
+            <i data-lucide="arrow-up-to-line" class="upload-icon"></i>
+            <p>Arraste e solte arquivos aqui</p>
+            <span>ou clique para navegar</span>
+          </div>
+          <input type="file" id="file-input" style="display: none;">
+        </div>
+
+        <!-- Upload Progress List -->
+        <div class="upload-progress-list" id="upload-progress-list">
+          <!-- Dynamic progress items will go here -->
+        </div>
+      </section>
+
+      <!-- Files Explorer Section -->
+      <section class="glass-card explorer-section">
+        <div class="explorer-header">
+          <h3><i data-lucide="folder-open"></i> Arquivos Salvos</h3>
+          <div class="explorer-actions">
+            <button class="icon-btn refresh-btn" id="refresh-btn" title="Atualizar Lista">
+              <i data-lucide="rotate-cw"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="files-view-container">
+          <!-- Grid Layout -->
+          <div class="files-grid" id="files-grid">
+            <!-- Dynamic file cards go here -->
+            <div class="empty-explorer">
+              <i data-lucide="ghost"></i>
+              <p>Nenhum arquivo na sua nuvem pessoal.</p>
+              <span>Arraste um arquivo acima para começar!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Image Preview Modal -->
+  <div class="modal" id="preview-modal">
+    <span class="close-modal" id="close-modal">&times;</span>
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="Preview">
+      <div id="modal-caption"></div>
+    </div>
+  </div>
+
+  <!-- Javascript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "personal-cloud",
+  "version": "1.0.0",
+  "description": "Um servidor de nuvem pessoal e gerenciador de arquivos local autohospedado",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "keywords": [
+    "cloud",
+    "file-manager",
+    "self-hosted",
+    "local-cloud",
+    "portfolio"
+  ],
+  "author": "Gabriel Bueno",
+  "license": "MIT"
+}
